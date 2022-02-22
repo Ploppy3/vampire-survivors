@@ -1,0 +1,248 @@
+{
+  "name": "vampire-survivors",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^1.8.3",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.4.0",
+    "@types/node": "^16.11.22",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
+    "framer-motion": "^5.6.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "5.0.0",
+    "typescript": "^4.5.5",
+    "web-vitals": "^2.1.4"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "rules": {
+      "indent": [
+        "error",
+        2
+      ],
+      "no-multi-spaces": [
+        "error"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ],
+      "semi-spacing": [
+        "error",
+        {
+          "before": false,
+          "after": true
+        }
+      ],
+      "comma-spacing": [
+        "error",
+        {
+          "before": false,
+          "after": true
+        }
+      ],
+      "comma-dangle": [
+        "error",
+        "always-multiline"
+      ],
+      "keyword-spacing": [
+        "error"
+      ],
+      "object-curly-spacing": [
+        "error",
+        "always"
+      ],
+      "object-curly-newline": [
+        "error",
+        {
+          "minProperties": 1
+        }
+      ],
+      "key-spacing": [
+        "error"
+      ],
+      "array-bracket-spacing": [
+        "error",
+        "never"
+      ],
+      "array-bracket-newline": [
+        "error",
+        "consistent"
+      ],
+      "array-element-newline": [
+        "error",
+        {
+          "multiline": true
+        }
+      ],
+      "space-before-blocks": [
+        "error",
+        "always"
+      ],
+      "padded-blocks": [
+        "error",
+        "never"
+      ],
+      "padding-line-between-statements": [
+        "error",
+        {
+          "blankLine": "always",
+          "prev": "*",
+          "next": "return"
+        },
+        {
+          "blankLine": "always",
+          "prev": "*",
+          "next": "function"
+        },
+        {
+          "blankLine": "always",
+          "prev": "function",
+          "next": "*"
+        }
+      ],
+      "no-trailing-spaces": "error",
+      "space-in-parens": [
+        "error",
+        "never"
+      ],
+      "space-before-function-paren": [
+        "error",
+        "never"
+      ],
+      "no-multiple-empty-lines": [
+        "error",
+        {
+          "max": 1,
+          "maxEOF": 0,
+          "maxBOF": 0
+        }
+      ],
+      "react/jsx-indent": [
+        "error",
+        2
+      ],
+      "react/jsx-indent-props": [
+        "error",
+        2
+      ],
+      "react/jsx-one-expression-per-line": [
+        "error"
+      ],
+      "react/jsx-tag-spacing": [
+        "error",
+        {
+          "closingSlash": "never",
+          "beforeSelfClosing": "always",
+          "afterOpening": "never",
+          "beforeClosing": "never"
+        }
+      ],
+      "react/jsx-wrap-multilines": [
+        "error",
+        {
+          "declaration": "parens-new-line",
+          "assignment": "parens-new-line",
+          "return": "parens-new-line",
+          "arrow": "parens-new-line",
+          "condition": "parens-new-line",
+          "logical": "parens-new-line",
+          "prop": "parens-new-line"
+        }
+      ],
+      "react/jsx-first-prop-new-line": [
+        "error"
+      ],
+      "react/jsx-max-props-per-line": [
+        "error",
+        {
+          "maximum": 1,
+          "when": "always"
+        }
+      ],
+      "react/jsx-key": [
+        "error",
+        {
+          "checkFragmentShorthand": true
+        }
+      ],
+      "react/jsx-equals-spacing": [
+        "error",
+        "never"
+      ],
+      "react/jsx-boolean-value": [
+        "error",
+        "always"
+      ],
+      "react/jsx-closing-bracket-location": [
+        "error",
+        "after-props"
+      ],
+      "react/self-closing-comp": [
+        "error",
+        {
+          "component": true,
+          "html": true
+        }
+      ],
+      "react/jsx-curly-spacing": [
+        "error",
+        {
+          "when": "never",
+          "children": true,
+          "spacing": {
+            "objectLiterals": "never"
+          }
+        }
+      ],
+      "react/jsx-curly-newline": [
+        "error",
+        {
+          "multiline": "consistent",
+          "singleline": "forbid"
+        }
+      ],
+      "react/jsx-fragments": [
+        "error",
+        "syntax"
+      ],
+      "react/jsx-no-useless-fragment": [
+        "error"
+      ],
+      "react/jsx-newline": [
+        "error",
+        {
+          "prevent": false
+        }
+      ]
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
