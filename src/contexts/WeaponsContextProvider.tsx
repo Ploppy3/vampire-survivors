@@ -30,7 +30,7 @@ function WeaponsContextProvider({
   children,
 }: Props) {
   const [weapons, setWeapons] = useState<(Weapon | null)[]>([null, null, null, null, null, null]);
-  const [passives, setPassives] = useState<(Weapon | null)[]>([null, null, null, null, null, null]);
+  const [passives, setPassives] = useState<(Passive | null)[]>([null, null, null, null, null, null]);
 
   const weaponsContextValue = useMemo<WeaponsContextProps>(() => {
     return ({

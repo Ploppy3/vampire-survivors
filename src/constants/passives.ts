@@ -8,63 +8,63 @@ export type Passive = {
 }
 
 export const PASSIVES: {[key:string]: Passive} = {
-  Armor: {
+  "Armor": {
     name: "Armor",
     src: "passives/armor.png",
   },
-  Attractorb: {
+  "Attractorb": {
     name: "Attractorb",
     src: "passives/attractorb.png",
   },
-  Bracer: {
+  "Bracer": {
     name: "Bracer",
     src: "passives/bracer.png",
   },
-  Candelabrador: {
+  "Candelabrador": {
     name: "Candelabrador",
     src: "passives/candelabrador.png",
   },
-  Clover: {
+  "Clover": {
     name: "Clover",
     src: "passives/clover.png",
   },
-  Crown: {
+  "Crown": {
     name: "Crown",
     src: "passives/crown.png",
   },
-  Duplicator: {
+  "Duplicator": {
     name: "Duplicator",
     src: "passives/duplicator.png",
   },
-  EmptyTome: {
+  "EmptyTome": {
     name: "Empty Tome",
     src: "passives/empty-tome.png",
   },
-  HollowHeart: {
+  "HollowHeart": {
     name: "Hollow Heart",
     src: "passives/hollow-heart.png",
   },
-  Pummarola: {
+  "Pummarola": {
     name: "Pummarola",
     src: "passives/pummarola.png",
   },
-  SpellBinder: {
+  "SpellBinder": {
     name: "SpellBinder",
     src: "passives/spellbinder.png",
   },
-  Spinach: {
+  "Spinach": {
     name: "Spinach",
     src: "passives/spinach.png",
   },
-  StoneMask: {
+  "StoneMask": {
     name: "Stone Mask",
     src: "passives/stone-mask.png",
   },
-  Tiragisú: {
+  "Tiragisú": {
     name: "Tiragisú",
     src: "passives/tiragisu.png",
   },
-  Wings: {
+  "Wings": {
     name: "Wings",
     src: "passives/wings.png",
   },

@@ -1,13 +1,13 @@
 import {
   Button, Image,
-  Menu, MenuButton, MenuItem, MenuList,
+  Menu, MenuButton, MenuDivider, MenuGroup, MenuItem, MenuList,
 } from "@chakra-ui/react";
 import {
   useContext,
 } from "react";
 import {
-  Weapon,
-  WEAPONS_LIST,
+  Weapon, WEAPONS_LIST_EVOLUTION,
+  WEAPONS_LIST_NORMAL,
 } from "../constants/weapons";
 import {
   WeaponsContext,
@@ -23,6 +23,7 @@ function WeaponBlock({
   weapon,
 }: Props) {
   const {
+    weapons,
     setWeapon,
   } = useContext(WeaponsContext);
 
@@ -39,24 +40,43 @@ function WeaponBlock({
       </MenuButton>
 
       <MenuList
-        maxH="75vh"
+        maxH="45vh"
         overflowY="scroll">
         <MenuItem onClick={() => {setWeapon(position, null);}}>
           -
         </MenuItem>
 
-        {WEAPONS_LIST.map?.((weapon) => (
-          <MenuItem
-            onClick={()=> {setWeapon(position, weapon);}}
-            key={weapon.name}>
-            <Image
-              src={weapon.src}
-              w="1rem"
-              mr=".5rem" />
+        <MenuGroup title="Evolutions">
+          {WEAPONS_LIST_EVOLUTION.filter(weapon => !weapons.includes(weapon)).map((weapon) => (
+            <MenuItem
+              onClick={()=> {setWeapon(position, weapon);}}
+              key={weapon.name}>
+              <Image
+                src={weapon.src}
+                w="1rem"
+                mr=".5rem" />
 
-            {weapon.name}
-          </MenuItem>
-        ))}
+              {weapon.name}
+            </MenuItem>
+          ))}
+        </MenuGroup>
+
+        <MenuDivider />
+
+        <MenuGroup title="Normal">
+          {WEAPONS_LIST_NORMAL.filter(weapon => !weapons.includes(weapon)).map((weapon) => (
+            <MenuItem
+              onClick={()=> {setWeapon(position, weapon);}}
+              key={weapon.name}>
+              <Image
+                src={weapon.src}
+                w="1rem"
+                mr=".5rem" />
+
+              {weapon.name}
+            </MenuItem>
+          ))}
+        </MenuGroup>
       </MenuList>
     </Menu>
   );

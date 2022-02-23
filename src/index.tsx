@@ -1,15 +1,21 @@
 import {
-  ChakraProvider,
+  ChakraProvider, extendTheme, ThemeConfig,
 } from '@chakra-ui/react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import GeolocationProvider from './providers/Geolocation';
+
+const config: ThemeConfig = {
+  initialColorMode: 'dark',
+  useSystemColorMode: true,
+};
+
+const theme = extendTheme({
+  config,
+});
 
 ReactDOM.render(
-  <ChakraProvider>
-    <GeolocationProvider>
-      <App />
-    </GeolocationProvider>
+  <ChakraProvider theme={theme}>
+    <App />
   </ChakraProvider>
   ,
   document.getElementById('root'),

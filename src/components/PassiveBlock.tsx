@@ -22,6 +22,7 @@ function PassiveBlock({
   position, passive,
 }: Props) {
   const {
+    passives,
     setPassive,
   } = useContext(WeaponsContext);
 
@@ -38,14 +39,14 @@ function PassiveBlock({
       </MenuButton>
 
       <MenuList
-        maxH="75vh"
+        maxH="45vh"
         overflowY="scroll">
         <MenuItem
           onClick={() => {setPassive(position, null);}}>
           -
         </MenuItem>
 
-        {PASSIVES_LIST.map?.((passive) => (
+        {PASSIVES_LIST.filter(passive => !passives.includes(passive)).map((passive) => (
           <MenuItem
             onClick={() => {setPassive(position, passive);}}
             key={passive.name}>
