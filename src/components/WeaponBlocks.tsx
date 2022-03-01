@@ -1,5 +1,6 @@
 import {
-  HStack,
+  Text,
+  Wrap,
 } from "@chakra-ui/react";
 import {
   useContext,
@@ -15,16 +16,19 @@ function WeaponBlocks() {
   } = useContext(WeaponsContext);
 
   return (
-    // eslint-disable-next-line react/jsx-no-useless-fragment
     <>
-      <HStack spacing=".5rem">
+      <Text>
+        Weapons
+      </Text>
+
+      <Wrap spacing=".5rem">
         {weapons.map?.((weapon, index) => (
           <WeaponBlock
             position={index}
             weapon={weapon}
             key={index} />
         ))}
-      </HStack>
+      </Wrap>
     </>
   );
 }

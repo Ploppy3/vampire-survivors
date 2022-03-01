@@ -1,6 +1,10 @@
+import {
+  Passive, PASSIVES,
+} from "./passives";
+
 export type Weapon = {
   name: string,
-  isEvolution: boolean,
+  evolvedFrom: Passive | null,
   src: string,
 }
 
@@ -9,146 +13,146 @@ export type Weapon = {
 export const WEAPONS: { [key:string]: Weapon} = {
   "Whip": {
     name: "Whip",
-    isEvolution: false,
+    evolvedFrom: null,
     src: "/weapons/whip.png",
   },
   "Bloody Tear": {
     name: "Bloody Tear",
-    isEvolution: true,
+    evolvedFrom: PASSIVES["Hollow Heart"],
     src: "/weapons/bloody-tear.png",
   },
   "Magic Wand": {
     name: "Magic Wand",
-    isEvolution: false,
+    evolvedFrom: null,
     src: "/weapons/magic-wand.png",
   },
   "Holy Wand": {
     name: "Holy Wand",
-    isEvolution: true,
+    evolvedFrom: PASSIVES["Empty Tome"],
     src: "/weapons/holy-wand.png",
   },
   "Knife": {
     name: "Knife",
-    isEvolution: false,
+    evolvedFrom: null,
     src: "/weapons/knife.png",
   },
   "Thousand Edge": {
     name: "Thousand Edge",
-    isEvolution: true,
+    evolvedFrom: PASSIVES["Bracer"],
     src: "/weapons/thousand-edge.png",
   },
   "Axe": {
     name: "Axe",
-    isEvolution: false,
+    evolvedFrom: null,
     src: "/weapons/axe.png",
   },
   "Death Spiral": {
     name: "Death Spiral",
-    isEvolution: true,
+    evolvedFrom: PASSIVES["Candelabrador"],
     src: "/weapons/death-spiral.png",
   },
   "Cross": {
     name: "Cross",
-    isEvolution: false,
+    evolvedFrom: null,
     src: "/weapons/cross.png",
   },
   "Heaven Sword": {
     name: "Heaven Sword",
-    isEvolution: true,
+    evolvedFrom: PASSIVES["Clover"],
     src: "/weapons/heaven-sword.png",
   },
   "King Bible": {
     name: "King Bible",
-    isEvolution: false,
+    evolvedFrom: null,
     src: "/weapons/king-bible.png",
   },
   "Unholy Vespers": {
     name: "Unholy Vespers",
-    isEvolution: true,
+    evolvedFrom: PASSIVES["SpellBinder"],
     src: "/weapons/unholy-vespers.png",
   },
   "Fire Wand": {
     name: "Fire Wand",
-    isEvolution: false,
+    evolvedFrom: null,
     src: "/weapons/fire-wand.png",
   },
   "Hellfire": {
     name: "Hellfire",
-    isEvolution: true,
+    evolvedFrom: PASSIVES["Spinach"],
     src: "/weapons/hellfire.png",
   },
   "Garlic": {
     name: "Garlic",
-    isEvolution: false,
+    evolvedFrom: null,
     src: "/weapons/garlic.png",
   },
   "Soul Eater": {
     name: "Soul Eater",
-    isEvolution: true,
+    evolvedFrom: PASSIVES["Pummarola"],
     src: "/weapons/soul-eater.png",
   },
   "Peachone": {
     name: "Peachone",
-    isEvolution: false,
+    evolvedFrom: null,
     src: "/weapons/peachone.png",
   },
   "Ebony Wings": {
     name: "Ebony Wings",
-    isEvolution: false,
+    evolvedFrom: null,
     src: "/weapons/ebony-wings.png",
   },
   "Vandalier": {
     name: "Vandalier",
-    isEvolution: true,
+    evolvedFrom: null,
     src: "/weapons/vandalier.png",
   },
   "Santa Water": {
     name: "Santa Water",
-    isEvolution: false,
+    evolvedFrom: null,
     src: "/weapons/santa-water.png",
   },
   "La Borra": {
     name: "La Borra",
-    isEvolution: true,
+    evolvedFrom: PASSIVES["Attractorb"],
     src: "/weapons/la-borra.png",
   },
   "Lightning Ring": {
     name: "Lightning Ring",
-    isEvolution: false,
+    evolvedFrom: null,
     src: "/weapons/lightning-ring.png",
   },
   "Thunder Loop": {
     name: "Thunder Loop",
-    isEvolution: true,
+    evolvedFrom: PASSIVES["Duplicator"],
     src: "/weapons/thunder-loop.png",
   },
   "Runetracer": {
     name: "Runetracer",
-    isEvolution: false,
+    evolvedFrom: null,
     src: "/weapons/runetracer.png",
   },
   "Pentagram": {
     name: "Pentagram",
-    isEvolution: false,
+    evolvedFrom: null,
     src: "/weapons/pentagram.png",
   },
   "Clock Lancet": {
     name: "Clock Lancet",
-    isEvolution: false,
+    evolvedFrom: null,
     src: "/weapons/clock-lancet.png",
   },
   "Laurel": {
     name: "Laurel",
-    isEvolution: false,
+    evolvedFrom: null,
     src: "/weapons/laurel.png",
   },
   "Bone": {
     name: "Bone",
-    isEvolution: false,
+    evolvedFrom: null,
     src: "/weapons/bone.png",
   },
 };
 
 export const WEAPONS_LIST = Object.values(WEAPONS);
-export const WEAPONS_LIST_NORMAL = WEAPONS_LIST.filter(weapon => !weapon.isEvolution);
-export const WEAPONS_LIST_EVOLUTION = WEAPONS_LIST.filter(weapon => weapon.isEvolution);
+export const WEAPONS_LIST_NORMAL = WEAPONS_LIST.filter(weapon => weapon.evolvedFrom === null);
+export const WEAPONS_LIST_EVOLUTION = WEAPONS_LIST.filter(weapon => weapon.evolvedFrom !== null);

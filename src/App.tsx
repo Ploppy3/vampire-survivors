@@ -1,6 +1,7 @@
 import {
   Stack,
 } from "@chakra-ui/react";
+import MissingPassives from "./components/MissingPassives";
 import PassiveBlocks from "./components/PassiveBlocks";
 import WeaponBlocks from "./components/WeaponBlocks";
 import WeaponsContextProvider from "./contexts/WeaponsContextProvider";
@@ -16,6 +17,8 @@ function App() {
         <WeaponBlocks />
 
         <PassiveBlocks />
+
+        <MissingPassives />
       </Stack>
     </WeaponsContextProvider>
   );

@@ -29,7 +29,8 @@ function WeaponBlock({
 
   return (
     <Menu
-      closeOnBlur={true}>
+      closeOnBlur={true}
+      isLazy={true}>
       <MenuButton
         as={Button}
         w="48px"

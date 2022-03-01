@@ -36,11 +36,11 @@ export const PASSIVES: {[key:string]: Passive} = {
     name: "Duplicator",
     src: "passives/duplicator.png",
   },
-  "EmptyTome": {
+  "Empty Tome": {
     name: "Empty Tome",
     src: "passives/empty-tome.png",
   },
-  "HollowHeart": {
+  "Hollow Heart": {
     name: "Hollow Heart",
     src: "passives/hollow-heart.png",
   },
@@ -56,7 +56,7 @@ export const PASSIVES: {[key:string]: Passive} = {
     name: "Spinach",
     src: "passives/spinach.png",
   },
-  "StoneMask": {
+  "Stone Mask": {
     name: "Stone Mask",
     src: "passives/stone-mask.png",
   },

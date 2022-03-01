@@ -1,4 +1,5 @@
 import {
+  Box,
   Button, Image,
   Menu, MenuButton, MenuItem, MenuList,
 } from "@chakra-ui/react";
@@ -24,19 +25,41 @@ function PassiveBlock({
   const {
     passives,
     setPassive,
+    deletePassive,
   } = useContext(WeaponsContext);
 
   return (
     <Menu
-      closeOnBlur={true}>
-      <MenuButton
-        as={Button}
-        w="48px"
-        h="48px">
-        {passive && (
-          <Image src={passive?.src} />
+      closeOnBlur={true}
+      isLazy={true}>
+      <Box
+        position="relative">
+        <MenuButton
+          as={Button}
+          w="48px"
+          h="48px">
+          {passive && (
+            <Image src={passive?.src} />
+          )}
+        </MenuButton>
+
+        {passives.length > 6 && (
+          <Button
+            onClick={() => {
+              deletePassive(position);
+            }}
+            size="xs"
+            position="absolute"
+            top="0"
+            right="0"
+            transform="translate(50%, -50%)"
+            colorScheme="red"
+            variant="ghost"
+            borderRadius="full">
+            x
+          </Button>
         )}
-      </MenuButton>
+      </Box>
 
       <MenuList
         maxH="45vh"
@@ -48,7 +71,7 @@ function PassiveBlock({
 
         {PASSIVES_LIST.filter(passive => !passives.includes(passive)).map((passive) => (
           <MenuItem
-            onClick={() => {setPassive(position, passive);}}
+            onClick={() => { setPassive(position, passive); }}
             key={passive.name}>
             <Image
               src={passive.src}

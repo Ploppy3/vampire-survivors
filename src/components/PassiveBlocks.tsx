@@ -1,6 +1,5 @@
 import {
-  Button,
-  HStack,
+  Button, Text, Wrap,
 } from "@chakra-ui/react";
 import {
   useCallback,
@@ -22,9 +21,14 @@ function PassiveBlocks() {
   }, [passives.length, setPassive]);
 
   return (
-    // eslint-disable-next-line react/jsx-no-useless-fragment
     <>
-      <HStack spacing=".5rem">
+      <Text>
+        Passives
+      </Text>
+
+      <Wrap
+        spacing=".5rem"
+        align="center">
         {passives.map?.((passive, index) => (
           <PassiveBlock
             position={index}
@@ -35,7 +39,7 @@ function PassiveBlocks() {
         <Button onClick={handleClickAddPassive}>
           +
         </Button>
-      </HStack>
+      </Wrap>
     </>
   );
 }
