@@ -26,6 +26,7 @@ function PassiveBlock({
     passives,
     setPassive,
     deletePassive,
+    passivesInStage,
   } = useContext(WeaponsContext);
 
   return (
@@ -37,7 +38,8 @@ function PassiveBlock({
         <MenuButton
           as={Button}
           w="48px"
-          h="48px">
+          h="48px"
+          border={position > 5 ? "1px solid #000": (passive && passivesInStage.includes(passive) ? "1px solid orange" : "none")}>
           {passive && (
             <Image src={passive?.src} />
           )}
@@ -72,6 +74,7 @@ function PassiveBlock({
         {PASSIVES_LIST.filter(passive => !passives.includes(passive)).map((passive) => (
           <MenuItem
             onClick={() => { setPassive(position, passive); }}
+            opacity={position < 6 && passivesInStage.includes(passive) ? 0.25 : 1}
             key={passive.name}>
             <Image
               src={passive.src}

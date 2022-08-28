@@ -4,155 +4,336 @@ import {
 
 export type Weapon = {
   name: string,
-  evolvedFrom: Passive | null,
   src: string,
+  evolvedFrom: Passive[],
+  unionFrom: Weapon[],
 }
 
-// const WEAPON_NAMES = ["WHIP, Bloody Tear", "Magic Wand", "Holy Wand", "Knife", "Thousand Edge", "Axe", "Death Spiral", "Cross", "Heaven Sword", "King Bible", "Unholy Vespers", "Fire Wand", "Hellfire", "Garlic", "Soul Eater", "Peachone", "Ebony Wings", "Vandalier", "Santa Water", "La Borra", "Lightning Ring", "Thunder Loop", "Runetracer", "Pentagram", "Clock Lancet", "Laurel", "Bone"];
-
-export const WEAPONS: { [key:string]: Weapon} = {
+const _WEAPONS: { [key:string]: Weapon} = {
   "Whip": {
     name: "Whip",
-    evolvedFrom: null,
-    src: "/weapons/whip.png",
-  },
-  "Bloody Tear": {
-    name: "Bloody Tear",
-    evolvedFrom: PASSIVES["Hollow Heart"],
-    src: "/weapons/bloody-tear.png",
+    src: "/weapons/whip.webp",
+    evolvedFrom: [],
+    unionFrom: [],
   },
   "Magic Wand": {
     name: "Magic Wand",
-    evolvedFrom: null,
-    src: "/weapons/magic-wand.png",
-  },
-  "Holy Wand": {
-    name: "Holy Wand",
-    evolvedFrom: PASSIVES["Empty Tome"],
-    src: "/weapons/holy-wand.png",
+    src: "/weapons/magic-wand.webp",
+    evolvedFrom: [],
+    unionFrom: [],
   },
   "Knife": {
     name: "Knife",
-    evolvedFrom: null,
-    src: "/weapons/knife.png",
-  },
-  "Thousand Edge": {
-    name: "Thousand Edge",
-    evolvedFrom: PASSIVES["Bracer"],
-    src: "/weapons/thousand-edge.png",
+    src: "/weapons/knife.webp",
+    evolvedFrom: [],
+    unionFrom: [],
   },
   "Axe": {
     name: "Axe",
-    evolvedFrom: null,
-    src: "/weapons/axe.png",
-  },
-  "Death Spiral": {
-    name: "Death Spiral",
-    evolvedFrom: PASSIVES["Candelabrador"],
-    src: "/weapons/death-spiral.png",
+    src: "/weapons/axe.webp",
+    evolvedFrom: [],
+    unionFrom: [],
   },
   "Cross": {
     name: "Cross",
-    evolvedFrom: null,
-    src: "/weapons/cross.png",
-  },
-  "Heaven Sword": {
-    name: "Heaven Sword",
-    evolvedFrom: PASSIVES["Clover"],
-    src: "/weapons/heaven-sword.png",
+    src: "/weapons/cross.webp",
+    evolvedFrom: [],
+    unionFrom: [],
   },
   "King Bible": {
     name: "King Bible",
-    evolvedFrom: null,
-    src: "/weapons/king-bible.png",
-  },
-  "Unholy Vespers": {
-    name: "Unholy Vespers",
-    evolvedFrom: PASSIVES["SpellBinder"],
-    src: "/weapons/unholy-vespers.png",
+    src: "/weapons/king-bible.webp",
+    evolvedFrom: [],
+    unionFrom: [],
   },
   "Fire Wand": {
     name: "Fire Wand",
-    evolvedFrom: null,
-    src: "/weapons/fire-wand.png",
-  },
-  "Hellfire": {
-    name: "Hellfire",
-    evolvedFrom: PASSIVES["Spinach"],
-    src: "/weapons/hellfire.png",
+    src: "/weapons/fire-wand.webp",
+    evolvedFrom: [],
+    unionFrom: [],
   },
   "Garlic": {
     name: "Garlic",
-    evolvedFrom: null,
-    src: "/weapons/garlic.png",
-  },
-  "Soul Eater": {
-    name: "Soul Eater",
-    evolvedFrom: PASSIVES["Pummarola"],
-    src: "/weapons/soul-eater.png",
-  },
-  "Peachone": {
-    name: "Peachone",
-    evolvedFrom: null,
-    src: "/weapons/peachone.png",
-  },
-  "Ebony Wings": {
-    name: "Ebony Wings",
-    evolvedFrom: null,
-    src: "/weapons/ebony-wings.png",
-  },
-  "Vandalier": {
-    name: "Vandalier",
-    evolvedFrom: null,
-    src: "/weapons/vandalier.png",
+    src: "/weapons/garlic.webp",
+    evolvedFrom: [],
+    unionFrom: [],
   },
   "Santa Water": {
     name: "Santa Water",
-    evolvedFrom: null,
-    src: "/weapons/santa-water.png",
-  },
-  "La Borra": {
-    name: "La Borra",
-    evolvedFrom: PASSIVES["Attractorb"],
-    src: "/weapons/la-borra.png",
-  },
-  "Lightning Ring": {
-    name: "Lightning Ring",
-    evolvedFrom: null,
-    src: "/weapons/lightning-ring.png",
-  },
-  "Thunder Loop": {
-    name: "Thunder Loop",
-    evolvedFrom: PASSIVES["Duplicator"],
-    src: "/weapons/thunder-loop.png",
+    src: "/weapons/santa-water.webp",
+    evolvedFrom: [],
+    unionFrom: [],
   },
   "Runetracer": {
     name: "Runetracer",
-    evolvedFrom: null,
-    src: "/weapons/runetracer.png",
+    src: "/weapons/runetracer.webp",
+    evolvedFrom: [],
+    unionFrom: [],
+  },
+  "Lightning Ring": {
+    name: "Lightning Ring",
+    src: "/weapons/lightning-ring.webp",
+    evolvedFrom: [],
+    unionFrom: [],
   },
   "Pentagram": {
     name: "Pentagram",
-    evolvedFrom: null,
-    src: "/weapons/pentagram.png",
+    src: "/weapons/pentagram.webp",
+    evolvedFrom: [],
+    unionFrom: [],
+  },
+  "Peachone": {
+    name: "Peachone",
+    src: "/weapons/peachone.webp",
+    evolvedFrom: [],
+    unionFrom: [],
+  },
+  "Ebony Wings": {
+    name: "Ebony Wings",
+    src: "/weapons/ebony-wings.webp",
+    evolvedFrom: [],
+    unionFrom: [],
+  },
+  "Phiera Der Tuphello": {
+    name: "Phiera Der Tuphello",
+    src: "/weapons/phiera-der-tuphello.webp",
+    evolvedFrom: [],
+    unionFrom: [],
+  },
+  "Eight The Sparrow": {
+    name: "Eight The Sparrow",
+    src: "/weapons/eight-the-sparrow.webp",
+    evolvedFrom: [],
+    unionFrom: [],
+  },
+  "Gatti Amari": {
+    name: "Gatti Amari",
+    src: "/weapons/gatti-amari.webp",
+    evolvedFrom: [],
+    unionFrom: [],
+  },
+  "Song of Mana": {
+    name: "Song of Mana",
+    src: "/weapons/song-of-mana.webp",
+    evolvedFrom: [],
+    unionFrom: [],
+  },
+  "Shadow Pinion": {
+    name: "Shadow Pinion",
+    src: "/weapons/shadow-pinion.webp",
+    evolvedFrom: [],
+    unionFrom: [],
   },
   "Clock Lancet": {
     name: "Clock Lancet",
-    evolvedFrom: null,
-    src: "/weapons/clock-lancet.png",
+    src: "/weapons/clock-lancet.webp",
+    evolvedFrom: [],
+    unionFrom: [],
   },
   "Laurel": {
     name: "Laurel",
-    evolvedFrom: null,
-    src: "/weapons/laurel.png",
+    src: "/weapons/laurel.webp",
+    evolvedFrom: [],
+    unionFrom: [],
+  },
+  "Vento Sacro": {
+    name: "Vento Sacro",
+    src: "/weapons/vento-sacro.webp",
+    evolvedFrom: [],
+    unionFrom: [],
   },
   "Bone": {
     name: "Bone",
-    evolvedFrom: null,
-    src: "/weapons/bone.png",
+    src: "/weapons/bone.webp",
+    evolvedFrom: [],
+    unionFrom: [],
+  },
+  "Cherry Bomb": {
+    name: "Cherry Bomb",
+    src: "/weapons/cherry-bomb.webp",
+    evolvedFrom: [],
+    unionFrom: [],
+  },
+  "Carréllo": {
+    name: "Carréllo",
+    src: "/weapons/carrello.webp",
+    evolvedFrom: [],
+    unionFrom: [],
+  },
+  "Celestial Dusting": {
+    name: "Celestial Dusting",
+    src: "/weapons/celestial-dusting.webp",
+    evolvedFrom: [],
+    unionFrom: [],
+  },
+  "La Robba": {
+    name: "La Robba",
+    src: "/weapons/la-robba.webp",
+    evolvedFrom: [],
+    unionFrom: [],
+  },
+  "Candybox": {
+    name: "Candybox",
+    src: "/weapons/candybox.webp",
+    evolvedFrom: [],
+    unionFrom: [],
+  },
+  "Bracelet": {
+    name: "Bracelet",
+    src: "/weapons/bracelet.webp",
+    evolvedFrom: [],
+    unionFrom: [],
+  },
+  "Victory Sword": {
+    name: "Victory Sword",
+    src: "/weapons/victory-sword.webp",
+    evolvedFrom: [],
+    unionFrom: [],
+  },
+  // Evolutions
+  "Bloody Tear": {
+    name: "Bloody Tear",
+    src: "/weapons/bloody-tear.webp",
+    evolvedFrom: [PASSIVES["Hollow Heart"]],
+    unionFrom: [],
+  },
+  "Holy Wand": {
+    name: "Holy Wand",
+    src: "/weapons/holy-wand.webp",
+    evolvedFrom: [PASSIVES["Empty Tome"]],
+    unionFrom: [],
+  },
+  "Thousand Edge": {
+    name: "Thousand Edge",
+    src: "/weapons/thousand-edge.webp",
+    evolvedFrom: [PASSIVES["Bracer"]],
+    unionFrom: [],
+  },
+  "Death Spiral": {
+    name: "Death Spiral",
+    src: "/weapons/death-spiral.webp",
+    evolvedFrom: [PASSIVES["Candelabrador"]],
+    unionFrom: [],
+  },
+  "Heaven Sword": {
+    name: "Heaven Sword",
+    src: "/weapons/heaven-sword.webp",
+    evolvedFrom: [PASSIVES["Clover"]],
+    unionFrom: [],
+  },
+  "Unholy Vespers": {
+    name: "Unholy Vespers",
+    src: "/weapons/unholy-vespers.webp",
+    evolvedFrom: [PASSIVES["Spellbinder"]],
+    unionFrom: [],
+  },
+  "Hellfire": {
+    name: "Hellfire",
+    src: "/weapons/hellfire.webp",
+    evolvedFrom: [PASSIVES["Spinach"]],
+    unionFrom: [],
+  },
+  "Soul Eater": {
+    name: "Soul Eater",
+    src: "/weapons/soul-eater.webp",
+    evolvedFrom: [PASSIVES["Pummarola"]],
+    unionFrom: [],
+  },
+  "La Borra": {
+    name: "La Borra",
+    src: "/weapons/la-borra.webp",
+    evolvedFrom: [PASSIVES["Attractorb"]],
+    unionFrom: [],
+  },
+  "NO FUTURE": {
+    name: "NO FUTURE",
+    src: "/weapons/no-future.webp",
+    evolvedFrom: [PASSIVES["Armor"]],
+    unionFrom: [],
+  },
+  "Thunder Loop": {
+    name: "Thunder Loop",
+    src: "/weapons/thunder-loop.webp",
+    evolvedFrom: [PASSIVES["Duplicator"]],
+    unionFrom: [],
+  },
+  "Gorgeous Moon": {
+    name: "Gorgeous Moon",
+    src: "/weapons/gorgeous-moon.webp",
+    evolvedFrom: [PASSIVES["Crown"]],
+    unionFrom: [],
+  },
+  "Vicious Hunger": {
+    name: "Vicious Hunger",
+    src: "/weapons/vicious-hunger.webp",
+    evolvedFrom: [PASSIVES["Stone Mask"]],
+    unionFrom: [],
+  },
+  "Mannajja": {
+    name: "Mannajja",
+    src: "/weapons/mannajja.webp",
+    evolvedFrom: [PASSIVES["Skull O'Maniac"]],
+    unionFrom: [],
+  },
+  "Valkyrie Turner": {
+    name: "Valkyrie Turner",
+    src: "/weapons/valkyrie-turner.webp",
+    evolvedFrom: [PASSIVES["Wings"]],
+    unionFrom: [],
+  },
+  "Infinite Corridor": {
+    name: "Infinite Corridor",
+    src: "/weapons/infinite-corridor.webp",
+    evolvedFrom: [PASSIVES["Silver Ring"], PASSIVES["Gold Ring"]],
+    unionFrom: [],
+  },
+  "Crimson Shroud": {
+    name: "Crimson Shroud",
+    src: "/weapons/crimson-shroud.webp",
+    evolvedFrom: [PASSIVES["Metaglio Left"], PASSIVES["Metaglio Right"]],
+    unionFrom: [],
+  },
+  "Bi-Bracelet": {
+    name: "Bi-Bracelet",
+    src: "/weapons/bi-bracelet.webp",
+    evolvedFrom: [],
+    unionFrom: [],
+  },
+  "Tri-Bracelet": {
+    name: "Tri-Bracelet",
+    src: "/weapons/tri-bracelet.webp",
+    evolvedFrom: [],
+    unionFrom: [],
   },
 };
+// Unions
+_WEAPONS["Vandalier"] = {
+  name: "Vandalier",
+  src: "/weapons/vandalier.webp",
+  evolvedFrom: [],
+  unionFrom: [_WEAPONS["Peachone"], _WEAPONS["Ebony Wings"]],
+};
+_WEAPONS["Phieraggi"] = {
+  name: "Phieraggi",
+  src: "/weapons/phieraggi.webp",
+  evolvedFrom: [],
+  unionFrom: [_WEAPONS["Tiragisú"], _WEAPONS["Phiera Der Tuphello"], _WEAPONS["Eight The Sparrow"]],
+};
+_WEAPONS["Fuwalafuwaloo"] = {
+  name: "Fuwalafuwaloo",
+  src: "/weapons/fuwalafuwaloo.webp",
+  evolvedFrom: [],
+  unionFrom: [_WEAPONS["Vento Sacro"], _WEAPONS["Bloody Tear"]],
+};
+_WEAPONS["Sole Solution"] = {
+  name: "Sole Solution",
+  src: "/weapons/sole-solution.webp",
+  evolvedFrom: [PASSIVES["Torrona's Box"]],
+  unionFrom: [_WEAPONS["Victory Sword"]],
+};
 
-export const WEAPONS_LIST = Object.values(WEAPONS);
-export const WEAPONS_LIST_NORMAL = WEAPONS_LIST.filter(weapon => weapon.evolvedFrom === null);
-export const WEAPONS_LIST_EVOLUTION = WEAPONS_LIST.filter(weapon => weapon.evolvedFrom !== null);
+export const WEAPONS = _WEAPONS;
+export const WEAPONS_LIST = Object.values(_WEAPONS);
+export const WEAPONS_LIST_NORMAL = WEAPONS_LIST.filter(weapon => weapon.evolvedFrom.length === 0 && weapon.unionFrom.length === 0);
+export const WEAPONS_LIST_EVOLUTION = WEAPONS_LIST.filter(weapon => weapon.evolvedFrom.length > 0);
+export const WEAPONS_LIST_UNIONS = WEAPONS_LIST.filter(weapon => weapon.unionFrom.length > 0);

@@ -23,15 +23,28 @@ function PassiveBlocks() {
   return (
     <>
       <Text>
-        Passives
+        Passives:
       </Text>
 
       <Wrap
         spacing=".5rem"
-        align="center">
-        {passives.map?.((passive, index) => (
+        align="center"
+        overflow="visible">
+        {passives.filter((passive, index) => index < 6).map?.((passive, index) => (
           <PassiveBlock
             position={index}
+            passive={passive}
+            key={index} />
+        ))}
+      </Wrap>
+
+      <Wrap
+        spacing=".5rem"
+        align="center"
+        overflow="visible">
+        {passives.filter((passive, index) => index >= 6).map?.((passive, index) => (
+          <PassiveBlock
+            position={index + 6}
             passive={passive}
             key={index} />
         ))}

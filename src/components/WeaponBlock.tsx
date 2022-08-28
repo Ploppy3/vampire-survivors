@@ -8,6 +8,7 @@ import {
 import {
   Weapon, WEAPONS_LIST_EVOLUTION,
   WEAPONS_LIST_NORMAL,
+  WEAPONS_LIST_UNIONS,
 } from "../constants/weapons";
 import {
   WeaponsContext,
@@ -25,6 +26,7 @@ function WeaponBlock({
   const {
     weapons,
     setWeapon,
+    passives,
   } = useContext(WeaponsContext);
 
   return (
@@ -34,7 +36,8 @@ function WeaponBlock({
       <MenuButton
         as={Button}
         w="48px"
-        h="48px">
+        h="48px"
+        border={weapon?.evolvedFrom?.every(passive => passives.includes(passive)) ? "none": (weapon ? "1px solid red" : "none")}>
         {weapon && (
           <Image src={weapon?.src} />
         )}
@@ -49,6 +52,23 @@ function WeaponBlock({
 
         <MenuGroup title="Evolutions">
           {WEAPONS_LIST_EVOLUTION.filter(weapon => !weapons.includes(weapon)).map((weapon) => (
+            <MenuItem
+              onClick={()=> {setWeapon(position, weapon);}}
+              key={weapon.name}>
+              <Image
+                src={weapon.src}
+                w="1rem"
+                mr=".5rem" />
+
+              {weapon.name}
+            </MenuItem>
+          ))}
+        </MenuGroup>
+
+        <MenuDivider />
+
+        <MenuGroup title="Unions">
+          {WEAPONS_LIST_UNIONS.filter(weapon => !weapons.includes(weapon)).map((weapon) => (
             <MenuItem
               onClick={()=> {setWeapon(position, weapon);}}
               key={weapon.name}>

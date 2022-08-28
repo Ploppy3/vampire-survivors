@@ -13,18 +13,22 @@ function MissingPassives() {
   const {
     missingPassives,
     pushPassive,
+    passivesInStage,
   } = useContext(WeaponsContext);
 
   return missingPassives.length > 0 ? (
     <>
       <Text>
-        Missing passives
+        Missing passives to complete build:
       </Text>
 
-      <Wrap spacing=".5rem">
-        {missingPassives.map?.((passive, index) => (
+      <Wrap
+        spacing=".5rem"
+        overflow="visible">
+        {missingPassives.map?.((passive) => (
           <ItemButton
-            onClick={()=>{pushPassive(passive);}}
+            onClick={() => { pushPassive(passive); }}
+            border={passivesInStage.includes(passive) ? "1px solid green" : undefined}
             src={passive.src}
             key={passive.name} />
         ))}

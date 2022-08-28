@@ -18,10 +18,12 @@ function WeaponBlocks() {
   return (
     <>
       <Text>
-        Weapons
+        Weapons:
       </Text>
 
-      <Wrap spacing=".5rem">
+      <Wrap
+        spacing=".5rem"
+        overflow="visible">
         {weapons.map?.((weapon, index) => (
           <WeaponBlock
             position={index}

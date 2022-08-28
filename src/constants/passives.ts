@@ -1,6 +1,6 @@
-export const PASSIVE_NAMES = [
-  "Armor", "Attractorb", "Bracer", "Candelabrador", "Clover", "Crown", "Duplicator", "Empty Tome", "Hollow Heart", "Pummarola", "SpellBinder", "Spinach", "Stone Mask", "Tiragisú", "Wings",
-];
+// export const PASSIVE_NAMES = [
+//   "Spinach", "Armor", "Hollow Heart", "Pummarola", "Empty Tome", "Candelabrador", "Bracer", "Spellbinder", "Duplicator", "Wings", "Attractorb", "Clover", "Crown", "Stone Mask", "Tiragisú", "Skull O'Maniac", "Silver Ring", "Gold Ring", "Metaglio Left", "Metaglio Right", "Torrona's Box",
+// ];
 
 export type Passive = {
   name: string;
@@ -8,65 +8,89 @@ export type Passive = {
 }
 
 export const PASSIVES: {[key:string]: Passive} = {
+  "Spinach": {
+    name: "Spinach",
+    src: "/passives/spinach.webp",
+  },
   "Armor": {
     name: "Armor",
-    src: "passives/armor.png",
-  },
-  "Attractorb": {
-    name: "Attractorb",
-    src: "passives/attractorb.png",
-  },
-  "Bracer": {
-    name: "Bracer",
-    src: "passives/bracer.png",
-  },
-  "Candelabrador": {
-    name: "Candelabrador",
-    src: "passives/candelabrador.png",
-  },
-  "Clover": {
-    name: "Clover",
-    src: "passives/clover.png",
-  },
-  "Crown": {
-    name: "Crown",
-    src: "passives/crown.png",
-  },
-  "Duplicator": {
-    name: "Duplicator",
-    src: "passives/duplicator.png",
-  },
-  "Empty Tome": {
-    name: "Empty Tome",
-    src: "passives/empty-tome.png",
+    src: "/passives/armor.webp",
   },
   "Hollow Heart": {
     name: "Hollow Heart",
-    src: "passives/hollow-heart.png",
+    src: "/passives/hollow-heart.webp",
   },
   "Pummarola": {
     name: "Pummarola",
-    src: "passives/pummarola.png",
+    src: "/passives/pummarola.webp",
   },
-  "SpellBinder": {
-    name: "SpellBinder",
-    src: "passives/spellbinder.png",
+  "Empty Tome": {
+    name: "Empty Tome",
+    src: "/passives/empty-tome.webp",
   },
-  "Spinach": {
-    name: "Spinach",
-    src: "passives/spinach.png",
+  "Candelabrador": {
+    name: "Candelabrador",
+    src: "/passives/candelabrador.webp",
   },
-  "Stone Mask": {
-    name: "Stone Mask",
-    src: "passives/stone-mask.png",
+  "Bracer": {
+    name: "Bracer",
+    src: "/passives/bracer.webp",
   },
-  "Tiragisú": {
-    name: "Tiragisú",
-    src: "passives/tiragisu.png",
+  "Spellbinder": {
+    name: "Spellbinder",
+    src: "/passives/spellbinder.webp",
+  },
+  "Duplicator": {
+    name: "Duplicator",
+    src: "/passives/duplicator.webp",
   },
   "Wings": {
     name: "Wings",
-    src: "passives/wings.png",
+    src: "/passives/wings.webp",
+  },
+  "Attractorb": {
+    name: "Attractorb",
+    src: "/passives/attractorb.webp",
+  },
+  "Clover": {
+    name: "Clover",
+    src: "/passives/clover.webp",
+  },
+  "Crown": {
+    name: "Crown",
+    src: "/passives/crown.webp",
+  },
+  "Stone Mask": {
+    name: "Stone Mask",
+    src: "/passives/stone-mask.webp",
+  },
+  "Tiragisú": {
+    name: "Tiragisú",
+    src: "/passives/tiragisu.webp",
+  },
+  "Skull O'Maniac": {
+    name: "Skull O'Maniac",
+    src: "/passives/skull-o-maniac.webp",
+  },
+  "Silver Ring": {
+    name: "Silver Ring",
+    src: "/passives/silver-ring.webp",
+  },
+  "Gold Ring": {
+    name: "Gold Ring",
+    src: "/passives/gold-ring.webp",
+  },
+  "Metaglio Left": {
+    name: "Metaglio Left",
+    src: "/passives/metaglio-left.webp",
+  },
+  "Metaglio Right": {
+    name: "Metaglio Right",
+    src: "/passives/metaglio-right.webp",
+  },
+  "Torrona's Box": {
+    name: "Torrona's Box",
+    src: "/passives/torrona-s-box.webp",
   },
 };
 
