@@ -23,7 +23,6 @@ function Stages() {
     passivesInStage,
     pushPassive,
     passives,
-    missingPassives,
   } = useContext(WeaponsContext);
 
   const stageWeapons = (stage && STAGES[stage?.name]?.weapons) ?? [];
@@ -42,7 +41,6 @@ function Stages() {
             stage ? setStage(stage) : setStage(null);
           }}
           maxH="45vh"
-          overflowY="scroll"
           display="inline-block"
           width="auto">
           <option value="">
